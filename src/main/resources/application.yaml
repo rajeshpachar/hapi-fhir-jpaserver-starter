@@ -6,6 +6,16 @@ management:
       exposure:
         include: "health,prometheus"
 spring:
+  #  security:
+#    user:
+#      name: user
+#      password: password
+#    oauth2:
+#      client:
+#        registration:
+#          github:
+#            client-id: 5e511f52bfa2f83e8844
+#            client-secret: a86a23e184ab2a6c37c720e592a0279e8b72e4cf
   main:
     allow-circular-references: true
     #allow-bean-definition-overriding: true
@@ -14,12 +24,16 @@ spring:
     check-location: false
     baselineOnMigrate: true
   datasource:
-    url: 'jdbc:h2:file:./target/database/h2'
+    #url: 'jdbc:h2:file:./target/database/h2'
     #url: jdbc:h2:mem:test_mem
-    username: sa
-    password: null
-    driverClassName: org.h2.Driver
-    max-active: 15
+    #username: sa
+    #password: null
+    #driverClassName: org.h2.Driver
+    #max-active: 15
+    url: 'jdbc:postgresql://localhost:5432/postgres'
+    username: postgres
+    password: admin
+    driverClassName: org.postgresql.Driver
 
     # database connection pool size
     hikari:
